@@ -1,0 +1,51 @@
+.arrow_down {
+  animation: move-arrow-down 2s linear infinite;
+}
+
+.arrow_right {
+  animation: move-arrow-right 2s linear infinite;
+}
+
+.arrow_left {
+  animation: move-arrow-left 2s linear infinite;
+}
+.rotate {
+  width: 100px;
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes move-arrow-right {
+  0% {
+    transform: translateX(-40px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes move-arrow-left {
+  0% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes move-arrow-down {
+  0% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
