@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
-// import axios from 'axios'
-// import toast, { Toaster } from 'react-hot-toast'
 import { toast } from 'react-toastify'
 import { useRouter } from 'next/router'
 import Loader from '../Common/Loader'
@@ -66,54 +64,6 @@ export default function ImportForm() {
         toast.error('An error occured')
       })
   }
-
-  // const onSubmit = useCallback(
-  //   async (data: ImportFormSchema) => {
-  //     try {
-  //       setIsSubmitting(true)
-
-  //       const timestamp = Date.now()
-  //       sessionStorage.setItem('psql_id', timestamp.toString())
-  //       const output = {
-  //         ...data,
-  //         id: timestamp.toString(),
-  //       }
-  //       const res = await axios.post(
-  //         'http://138.68.72.216:5500/psql-import',
-  //         output
-  //       )
-
-  //       if (res.status === 200) {
-  //         toast('Import successful', {
-  //           duration: 40000,
-  //           style: {
-  //             border: '1px solid #15d64c',
-  //             color: '#15d64c',
-  //           },
-  //         })
-  //         console.log(res.data)
-  //         router.push({
-  //           pathname: router.route,
-  //           query: {
-  //             im: true,
-  //           },
-  //         })
-  //       }
-  //     } catch (error: any) {
-  //       console.log(error)
-  //       toast('Error', {
-  //         duration: 40000,
-  //         style: {
-  //           border: '1px solid #d62515',
-  //           color: '#d62515',
-  //         },
-  //       })
-  //     } finally {
-  //       setIsSubmitting(false)
-  //     }
-  //   },
-  //   [router]
-  // )
 
   return (
     <div className="max-w-[1300px] mx-auto px-5 md:px-12 xl:px-20">
