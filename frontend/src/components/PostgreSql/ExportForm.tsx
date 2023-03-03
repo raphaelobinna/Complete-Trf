@@ -2,8 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
-// import axios from 'axios'
-// import toast, { Toaster } from 'react-hot-toast'
+
 import Loader from '../Common/Loader'
 import { toast } from 'react-toastify'
 import { useRouter } from 'next/router'
@@ -30,60 +29,6 @@ export default function ExportForm() {
   } = useForm<ImportFormSchema>({
     resolver: zodResolver(schema),
   })
-
-  // const onSubmit = useCallback(
-  //   async (data: ImportFormSchema) => {
-  //     try {
-  //       setIsSubmitting(true)
-  //       const output = {
-  //         ...data,
-  //         id: generatedId,
-  //       }
-  //       const res = await axios.post(
-  //         'http://138.68.72.216:5500/psql-export',
-  //         output
-  //       )
-
-  //       if (res.status === 200) {
-  //         toast('Export successful', {
-  //           duration: 40000,
-  //           style: {
-  //             border: '1px solid #15d64c',
-  //             color: '#15d64c',
-  //           },
-  //         })
-  //         console.log(res.data)
-  //       }
-  //     } catch (error: any) {
-  //       console.log(error)
-  //       toast('Error', {
-  //         duration: 40000,
-  //         style: {
-  //           border: '1px solid #d62515',
-  //           color: '#d62515',
-  //         },
-  //       })
-  //     } finally {
-  //       setIsSubmitting(false)
-  //     }
-  //   },
-  //   [generatedId]
-  // )
-
-  // useEffect(() => {
-  //   const genId = sessionStorage.getItem('psql_id') as string
-  //   if (genId) {
-  //     setGeneratedId(genId)
-  //   } else if (genId === null) {
-  //     router.push({
-  //       pathname: router.route,
-  //       query: {
-  //         im: false,
-  //       },
-  //     })
-  //   }
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [])
 
   const onSubmit = useCallback(
     async (data: ImportFormSchema) => {
